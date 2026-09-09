@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Дарья Балюк — Product Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#top">Дарья Балюк</a>
+      <div class="my">
+       <nav>
+          <a href="#othercases">Кейсы</a>
+          <a href="#experience">Опыт</a>
+          <a href="#contact">Контакты</a>
+          <a class="btn-resume" href="documents/CV_Балюк_Дарья.pdf" download>Скачать резюме</a>
+       </nav>
+       <button class="burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false">
+         <span></span><span></span><span></span>
+       </button>
+     </div>
+
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#othercases">Кейсы</a>
+    <a href="#experience">Опыт</a>
+    <a href="#contact">Контакты</a>
+  </div>
+</header>
+
+<script>
+  const burgerBtn = document.getElementById('burgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  burgerBtn.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    burgerBtn.classList.toggle('active', isOpen);
+    burgerBtn.setAttribute('aria-expanded', isOpen);
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      burgerBtn.classList.remove('active');
+      burgerBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+
+<main id="top">
+  <div class="wrap hero">
+    <h1>Дарья Балюк — <span class="role">Middle Product Designer</span></h1>
+    <p class="sub">Проектирую продукты для банковских и инвестиционных сервисов: от исследования проблемы до готового решения.</p>
+    <p class="fact"><strong>1,5 года</strong> веду продуктовые задачи в банке Уралсиб</p>
+    <div class="hero-contacts">
+      <a class="hero-btn primary" href="mailto:daria.balyuk@yandex.ru">daria.balyuk@yandex.ru</a>
+      <a class="hero-btn secondary" href="https://t.me/dar_tsss">@dar_tsss</a>
+    </div>
+  </div>
+
+  <section id="othercases" class="othercases">
+    <div class="wrap">
+      <div class="section-label">Кейсы</div>
+
+      <div class="othercases-grid">
+
+       <a class="othercase-card" href="case-card-component.html">
+          <img src="images/card-product-thumbnail.png" alt="Uralsib main screen card" class="project-card-image ">
+          <div class="othercase-scrim"></div>
+          <div class="othercase-tags">
+            <span class="tag-pill">Design System</span>
+            <span class="tag-pill">Fintech</span>
+          </div>
+          <div class="othercase-content">
+            <div class="othercase-text">
+              <h3>Карточка продукта на главном экране</h3>
+              <p>Единый компонент вместо разрозненных состояний по платформам и продуктам</p>
+            </div>
+            <span class="othercase-cta">
+              <span class="othercase-cta-icon">→</span>
+            </span>
+          </div>
+        </a>
+
+        <a class="othercase-card" href="margin-traiding.html">
+          <img src="images/margin_traiding_thumbnail.png" alt="Uralsib margin traiding" class="project-card-image  margin-traiding">
+          <div class="othercase-scrim"></div>
+          <div class="othercase-tags">
+            <span class="tag-pill">New feature</span>
+            <span class="tag-pill">Fintech</span>
+          </div>
+          <div class="othercase-content">
+            <div class="othercase-text">
+              <h3>Маржинальная торговля в инвестициях</h3>
+              <p>Внедрение фичи во все флоу и отслежиание состояния портфеля</p>
+            </div>
+            <span class="othercase-cta">
+              <span class="othercase-cta-icon">→</span>
+            </span>
+          </div>
+        </a>
+
+       <a class="othercase-card" href="rainguard.html">
+          <img src="images/rainguard_thumbnail.png"  alt="Rain Guard project" class="project-card-image">
+          <div class="othercase-scrim"></div>
+          <div class="othercase-tags">
+            <span class="tag-pill">Research</span>
+            <span class="tag-pill">Study project</span>
+          </div>
+          <div class="othercase-content">
+            <div class="othercase-text">
+              <h3>Сервис аренды зонтиков</h3>
+              <p>Учебный проект с полным циклом исследования — от гипотез до финального решения</p>
+            </div>
+            <span class="othercase-cta">
+              <span class="othercase-cta-icon">→</span>
+            </span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+</section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-label">Опыт работы</div>
+
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-head"><h3>Уралсиб · Product Designer</h3><span>февраль 2025 — сейчас</span></div>
+          <ul>
+            <li>Исследования: глубинные интервью, модерируемые и немодерируемые тесты гипотез</li>
+            <li>Презентация и аргументация решений бизнес-владельцам и дизайн-команде</li>
+            <li>Кроссревью и взаимодействие с дизайнерами других команд</li>
+            <li>Дизайн компонентов и документации для разработки</li>
+          </ul>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-head"><h3>15Meets · Product Designer</h3><span>октябрь 2024 — февраль 2025</span></div>
+          <ul>
+            <li>Разработка дизайн-системы приложения</li>
+            <li>Презентация и аргументация решений бизнес-владельцам продукта</li>
+            <li>Отрисовка ключевых сценариев</li>
+          </ul>
+        </div>
+
+        <div class="tl-item minor">
+          <div class="tl-head"><h3>Ранний опыт</h3><span>2023 — 2024</span></div>
+          <div class="tl-minor-list">
+            <div class="minor-row"><b>ACSY</b><span>июль 2024 – февраль 2025</span>Дизайн e-mail рассылок</div>
+            <div class="minor-row"><b>АльтраВита</b><span>апрель – июль 2024</span>UX/UI-дизайнер</div>
+            <div class="minor-row"><b>Дежурный по бизнесу</b><span>май – август 2023</span>UX/UI-дизайнер</div>
+          </div>
+        </div>
+      </div>
+      <div class="resume">
+        <a class="resume-cta" href="documents/CV_Балюк_Дарья.pdf" download>Скачать резюме (PDF)</a>
+       
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-label">Навыки</div>
+      <div class="skills-grid">
+        <div class="skills-col">
+          <h4>Хард-скиллы</h4>
+          <div class="skill-list">
+            <span>UX / UI</span>
+            <span>Дизайн-система</span>
+            <span>Дизайн-токены</span>
+            <span>Документация для разработки</span>
+            <span>JTBD / CJM</span>
+            <span>User persona / User flow</span>
+            <span>Работа с гипотезами</span>
+            <span>Адаптивный дизайн</span>
+          </div>
+        </div>
+        <div class="skills-col">
+          <h4>Инструменты</h4>
+          <div class="skill-list">
+            <span>Figma / Figma Variables</span>
+            <span>FigJam</span>
+            <span>Adobe Illustrator / Photoshop</span>
+            <span>Protopie / Principle</span>
+            <span>Notion / Confluence</span>
+            <span>AI в рабочем процессе</span>
+            <span>Tilda</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <div class="section-label">Образование</div>
+
+      <div class="edu-block">
+        <h4>Профильное</h4>
+        <div class="edu-row"><div>НИЯУ МИФИ — Электроника и автоматика физических установок</div><span>2019–2025</span></div>
+      </div>
+
+      <div class="edu-block">
+        <h4>Курсы</h4>
+        <div class="edu-row"><div>Дизайн мобильных и кросс-платформенных приложений — Яндекс Практикум</div><span>2026</span></div>
+        <div class="edu-row"><div>EPAM Designer's Workbook</div><span>2024</span></div>
+        <div class="edu-row"><div>Создание и продвижение IT-продуктов — VK Digital Camp</div><span>2024</span></div>
+        <div class="edu-row"><div>Основы веб-разработки — Цифровая кафедра</div><span>2024</span></div>
+        <div class="edu-row"><div>Веб-дизайнер — Нетология</div><span>2023</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Открыта для новых проектов</h2>
+    <p>Пишите, если нужен дизайнер, который доводит решение от исследования до готового продукта.</p>
+    <div class="footer-links">
+      <a href="mailto:daria.balyuk@yandex.ru">daria.balyuk@yandex.ru</a>
+      <a href="https://t.me/dar_tsss">@dar_tsss</a>
+
+    </div>
+    <div class="footer-bottom">
+      <span>Дарья Балюк</span>
+      <span>Middle Product Designer</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

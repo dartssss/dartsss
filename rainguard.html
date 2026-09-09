@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Карточки продукта – портфолио</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <header>
+  <div class="topbar-inner">
+    <a class="back-link" href="portfolio.html"><span class="arrow">←</span> Все кейсы</span></a>
+      <div class="my">
+       <div class="topbar">
+          <a href="portfolio.html#experience">Опыт</a>
+          <a href="portfolio.html#contact">Контакты</a>
+          <a class="btn-resume" href="documents/CV_Балюк_Дарья.pdf" download>Скачать резюме</a>
+       </div>
+       <button class="burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false">
+         <span></span><span></span><span></span>
+       </button>
+     </div>
+
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="portfolio.html#othercases">Кейсы</a>
+    <a href="portfolio.html#experience">Опыт</a>
+    <a href="portfolio.html#contact">Контакты</a>
+  </div>
+</header>
+
+<script>
+  const burgerBtn = document.getElementById('burgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  burgerBtn.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    burgerBtn.classList.toggle('active', isOpen);
+    burgerBtn.setAttribute('aria-expanded', isOpen);
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      burgerBtn.classList.remove('active');
+      burgerBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+
+
+
+
+
+<main>
+  <div class="wrap case-hero">
+    <div class="case-hero-eyebrow">Кейс · Research · Study project</div>
+    <h1>Rainguard – приложение для аренды зонтиков</h1>
+    <p class="case-hero-desc">Учебная задача, в рамках которой я разработала дизайн приложения от идеи до готового пользовательского сценария</p>
+
+    <div class="case-meta-row">
+      <div class="meta-item">
+        <span class="meta-label">Продукт</span>
+        <span class="meta-value">Яндекс Практикум</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Роль</span>
+        <span class="meta-value">Product Designer</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Платформа</span>
+        <span class="meta-value">Mobile</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Год</span>
+        <span class="meta-value">2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="case-layout">
+    <div class="case-bar" id="caseNav">
+      <a href="#goal" class="case-bar-link" data-target="goal">Цель</a>
+      <a href="#metrics" class="case-bar-link" data-target="metrics">Параметры успеха</a>
+      <a href="#analysis" class="case-bar-link" data-target="analysis">Анализ конкурентов</a>
+      <a href="#hypotises" class="case-bar-link" data-target="hypotises">Гипотезы</a>
+      <a href="#interview" class="case-bar-link" data-target="interview">Интервью</a>
+      <a href="#jtbd" class="case-bar-link" data-target="jtbd">JTBD</a>
+      <a href="#ref" class="case-bar-link" data-target="ref">Референсы</a>
+      <a href="#uikit" class="case-bar-link" data-target="uikit">UI-kit</a>
+      <a href="#flow" class="case-bar-link" data-target="flow">Сценарии</a>
+      <a href="#test" class="case-bar-link" data-target="test">Тестирование</a>
+    </div>
+
+    <div class="case-content">
+
+      <section id="goal" class="case-section">
+        <h2>Цель</h2>
+        <p>Создать MVP приложения по аренде зонтиков в Санкт-Петербурге RainGuard. Удобная и стильная защита от непогоды</p>
+      </section>
+
+      <section id="metrics" class="case-section">
+        <h2>Параметры успеха</h2><strong></strong>
+        <p><strong>Активные пользователи (AU) и ежемесячные активные пользователи (MAU)</strong>  — количество пользователей, которые регулярно взаимодействуют с приложением.</p>
+        <p><strong>Удержание (retention)</strong> — количество пользователей, которые возвращаются в продукт за определённый промежуток времени.</p>
+        <p><strong>NPS (net promoter score) или CSI (customer satisfaction index) </strong> — уровень удовлетворённости в процентах.</p>
+        <p><strong>ROI (return on investment)</strong> – показатель чистой прибыли приложения.</p>
+        <p><strong>ARPPU (average revenue per paying user)</strong> – средняя выручка с одного платящего пользователя.</p>
+        <p><strong>CR (conversion rate)</strong> — количество пользователей из общего числа, которые совершили нужное действие. Конверсия в аренду </p>
+      </section>
+
+      <section id="analysis" class="case-section">
+        <h2>Анализ конкурентов</h2>
+        <p>Необходимо собрать отзывы, для приложения, которое наиболее похожим образом закрывает потребность клиента и cуществует в виде приложения. <strong>Каршеринг</strong> самое похоже по механике, поэтому за основу беру его. Остальные конкуренты помогут выявить гипотезы, которые могут стать точками роста для приложения</p>
+        <p>Каршеринг сложен тем, что им могут пользоваться только люди с правами. Наше приожение для всех, поэтому для анализа возьму также другие приложения, в которых можно <strong>брать что-то на прокат: велосипеды, самокаты, павербанки, одежда, техника для ремонта, электроника и просто вещи</strong></p>
+        
+        <img src="images/rainguard/rainguard_reviews.png" alt="Отзывы на конкурентов" class="cases-images" style="padding-top: 20px; border-radius:6px;" >
+      </section>
+
+      <section id="hypotises" class="case-section">
+        <h2>Гипотезы</h2> <strong></strong>
+        <p>1) Мы предполагаем, что <strong>прощенная регистрация и добавление способа оплаты</strong> увеличит конверсию из первого запуска приложения в аренду для новых пользователей, потому что уменьшение количества обязательных действий снизит порог входа и позволит быстрее перейти к использованию сервиса</p>
+        <p>2) Мы предполагаем, что <strong>отображение ближайшей доступной точки аренды сразу после открытия приложения</strong> сократит время до начала аренды для пользователей, попавших под дождь, потому что избавит их от необходимости самостоятельно искать подходящую точку.</p>
+        <p>3) Мы предполагаем, что <strong>отображение информации о состоянии зонта или дождевика перед арендой</strong> увеличит доверие к сервису и сократит количество обращений в поддержку для новых пользователей, потому что они будут понимать, что получают исправный и чистый предмет.</p>
+        <p>4) Мы предполагаем, что <strong>информация об итоговой стоимости аренды</strong> повысит конверсию в начало аренды среди пользователей-туристов с посуточной арендой, потому что прозрачная стоимость снизит неопределенность и повысит доверие к сервису</p>
+        <p>5) Мы предполагаем, что <strong>пошаговый сценарий возврата аренды</strong>, увеличит процент успешных завершений аренд среди неопытных пользователей, потому что инструкция будет давать полное понимание того, что нужно сделать на данном этапе и снизит страх совершить ошибку</p>
+        <p>6) Мы предполагаем, что <strong>размещение кнопки быстрого обращения в поддержку в процессе аренды и возврата</strong> сократит количество незавершенных аренд для пользователей, столкнувшихся с проблемой, потому что они смогут оперативно получить помощь и завершить сценарий.</p>
+      
+      </section>
+
+      <section id="interview" class="case-section">
+        <h2>Интервью</h2>
+        <p style="padding-bottom: 18px;">Я провела интервью с 5 респондентами, возраст 21-41 год. Переодически используют приложения для шеринга.</p>
+        <a class="figmalink" href="https://www.figma.com/design/51gedCebHwPf09ndpkNsAm/%D0%A1%D0%B1%D0%BE%D1%80%D0%BD%D1%8B%D0%B9-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82--Copy-?node-id=4383-572&t=R7wZ2tMc23o1IzGD-11">Расшифровка интервью и инсайты</a>
+        <div class="callout" style="margin-top: 28px;">
+          <strong>Выводы:</strong>
+          <p>1) Первый запуск приложения должен занимать не больше нескольких минут до начала аренды.</p>
+          <p>2) Приложение должно помогать принять решение за несколько секунд, а не заставлять изучать карту.</p>
+          <p>3) Задача приложения — не только показать точку на карте, но и довести пользователя до неё.</p>
+          <p>4) Наличие инвентаря — одна из ключевых причин начать аренду.</p>
+          <p>5) Пользователь должен понимать, сколько заплатит, ещё до нажатия кнопки «Взять зонт».</p>
+          <p>6) Доверие к сервису формируется ещё до начала использования зонта.</p>
+          <p>7) Интерфейс должен помогать исправить ситуацию без обращения в поддержку.</p>
+          <p>8) Приложение должно вести пользователя через проблемные сценарии, а не только через идеальный путь.</p>
+        </div>
+        
+      </section>
+
+      <section id="jtbd" class="case-section">
+        <h2>JTBD</h2>
+        <p><strong>Когда</strong> я неожиданно попал под дождь, <strong>я хочу</strong> сразу увидеть ближайшую точку, где есть свободный зонт, <strong>чтобы</strong> быстро взять его и не тратить время на поиски.</p>
+        <p><strong>Когда</strong> я выбираю зонт, <strong>я хочу</strong> заранее видеть стоимость, состояние зонта и условия аренды, <strong>чтобы</strong> быть уверенным, что не столкнусь с неожиданными расходами или неисправным предметом.</p>
+        <p><strong>Когда</strong> я впервые пользуюсь сервисом, <strong>я хочу</strong> пройти регистрацию максимально быстро, <strong>чтобы</strong> сразу приступить к аренде без лишних действий.</p>
+        <p><strong>Когда</strong> я возвращаю зонт, <strong>я хочу</strong> получить понятные инструкции и подтверждение успешного возврата, <strong>чтобы</strong> быть уверенным, что аренда завершилась и деньги больше не списываются.</p>
+        <p><strong>Когда</strong> во время аренды возникает проблема,<strong>я хочу</strong> получить понятные подсказки или быстро решить ее самостоятельно, <strong>чтобы</strong> не тратить время на ожидание поддержки и продолжить пользоваться сервисом.</p>
+        
+      </section>
+
+      <section id="ref" class="case-section">
+        <h2>Референсы</h2>
+        <p>Чтобы начать прорабатывать концепцию, собрала мудборд:</p>
+        <img src="images/rainguard/rainguard_moodboard.png" alt="Мудборд" class="cases-images" style=" margin-bottom: 24px; border: 1px solid #cecdcd;" >
+        <p>А также визуальные и процессуальные референсы:</p>
+        <img src="images/rainguard/rainguard_ref.png" alt="Референсы" class="cases-images" style="padding-top: 20px; " >
+        
+      </section>
+
+      <section id="uikit" class="case-section">
+        <h2>UI-kit</h2>
+        <a class="figmalink" href="https://www.figma.com/design/51gedCebHwPf09ndpkNsAm/%D0%A1%D0%B1%D0%BE%D1%80%D0%BD%D1%8B%D0%B9-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82--Copy-?node-id=6215-2043&t=R7wZ2tMc23o1IzGD-11">Посмотреть полный ui-kit</a>
+        <img src="images/rainguard/rainguard_ui-kit.png" alt="ui-kit" class="cases-images" style="margin-top: 20px; border: 1px solid #cecdcd; " >
+      </section>
+
+
+
+
+      <section id="flow" class="case-section">
+        <h2>Сценарии</h2>
+        <p>Используя инсайты из исследований и собранный на основе референсов ui-kit, я собрала основные и вспомогательные сценарии, а именно:</p>
+        <ul style="font-size:16px;color:#3d3d3d;margin-bottom:18px; margin-top: 12px; padding-left: 20px;">
+            <li>Начало аренды</li>
+            <li>Завершение аренды</li>
+            <li>Возврат во время проверки</li>
+            <li>Вход в приложение по номеру телефона</li>
+            <li>Добавление почты</li>
+            <li>Способы оплаты</li>
+            <li>История аренд</li>
+          </ul>
+        <a class="figmalink" href="https://www.figma.com/design/51gedCebHwPf09ndpkNsAm/%D0%A1%D0%B1%D0%BE%D1%80%D0%BD%D1%8B%D0%B9-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82--Copy-?node-id=6392-74783&t=R7wZ2tMc23o1IzGD-11">Посмотреть полный флоу</a>
+        <img src="images/rainguard/rainguard_main_flow.png" alt="Основные сценарии" class="cases-images" style="margin-top: 20px; border: 1px solid #cecdcd; " >
+      </section>
+
+      <section id="test" class="case-section">
+        <h2>Тестирование</h2>
+        <p>В исследовании приняли участие 6 респондентов, возраст от 23 до 31 года, все работают в сфере it. Тестирование проводилось через платформу Maze, которая дает возможность проанализировать тепловую карту</p>
+        <p><strong>Задание:</strong> Арендуйте зонт на 5 часов</p>
+        <div class="callout" style="margin-top: 28px; margin-bottom: 28px;">
+          <p><strong> Процент прохождения сценария:</strong> 100% — все участники успешно добрались до экрана активной аренды.</p>
+          <p><strong> Мисклики: 37%</strong> — по большей степени из-за ограничений прототипа. Также некоторые экраны были настроены на анимацию через задержку, респондентам хотелось скорее перейти на следующий этап</p>
+          <p><strong>Выполнение задания: 0%</strong>  — никто из респондентов не выбрал тариф на 5ч., хотя это было основным заданием.</p>
+          <p><strong>Среднее время нахождения на экране после смены способа оплаты: 1,17c</strong>  — все респонденты, которые решили изменить способ оплаты успешно вернулись в основной сценарий</p>
+          
+        </div>
+        <p><strong>Инсайты:</strong> </p>
+        <p>На карточках выбора тарифа нет информации о выгоде, если брать не поминутный тариф. Стоит доработать карточки с тарифами, возможно добавить бейдж, который будет показывать выгоду тарифов</p>
+        
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<!--<div class="case-footer-nav">
+  
+  <a class="all-cases" href="portfolio.html#cases">← Все кейсы</a>
+  <a href="#">Маржинальная торговля в инвестициях →</a>
+</div>-->
+
+<section id="othercases" class="othercases">
+    <div class="wrap">
+      <div class="section-label">Другие кейсы</div>
+
+      <div class="othercases-grid">
+
+       <a class="othercase-card" href="case-card-component.html">
+          <img src="images/card-product-thumbnail.png" alt="Uralsib main screen card" class="project-card-image ">
+          <div class="othercase-scrim"></div>
+          <div class="othercase-tags">
+            <span class="tag-pill">Design System</span>
+            <span class="tag-pill">Fintech</span>
+          </div>
+          <div class="othercase-content">
+            <div class="othercase-text">
+              <h3>Карточка продукта на главном экране</h3>
+              <p>Единый компонент вместо разрозненных состояний по платформам и продуктам</p>
+            </div>
+            <span class="othercase-cta">
+              <span class="othercase-cta-icon">→</span>
+            </span>
+          </div>
+        </a>
+
+        <a class="othercase-card" href="margin-traiding.html">
+          <img src="images/margin_traiding_thumbnail.png" alt="Uralsib margin traiding" class="project-card-image  margin-traiding">
+          <div class="othercase-scrim"></div>
+          <div class="othercase-tags">
+            <span class="tag-pill">New feature</span>
+            <span class="tag-pill">Fintech</span>
+          </div>
+          <div class="othercase-content">
+            <div class="othercase-text">
+              <h3>Маржинальная торговля в инвестициях</h3>
+              <p>Внедрение фичи во все флоу и отслежиание состояния портфеля</p>
+            </div>
+            <span class="othercase-cta">
+              <span class="othercase-cta-icon">→</span>
+            </span>
+          </div>
+        </a>
+
+       <!--  <a class="othercase-card" href="rainguard.html">
+          <img src="images/margin_traiding_thumbnail.png" alt="Uralsib margin traiding" class="project-card-image  margin-traiding">
+          <img src="images/rainguard_thumbnail.png"  alt="Rain Guard project" class="project-card-image">
+          <div class="othercase-scrim"></div>
+          <div class="othercase-tags">
+            <span class="tag-pill">Research</span>
+            <span class="tag-pill">Study project</span>
+          </div>
+          <div class="othercase-content">
+            <div class="othercase-text">
+              <h3>Сервис аренды зонтиков</h3>
+              <p>Учебный проект с полным циклом исследования — от гипотез до финального решения</p>
+            </div>
+            <span class="othercase-cta">
+              <span class="othercase-cta-icon">→</span>
+            </span>
+          </div>
+        </a>-->
+
+      </div>
+    </div>
+</section>
+
+  
+
+<script>
+  const links = document.querySelectorAll('.case-bar-link');
+  const sections = document.querySelectorAll('.case-section');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const link = document.querySelector(`.case-bar-link[data-target="${entry.target.id}"]`);
+      if (entry.isIntersecting && link) {
+  links.forEach(l => l.classList.remove('active'));
+  link.classList.add('active');
+
+  // Автоматически прокручиваем меню к активному пункту
+  link.scrollIntoView({
+    behavior: 'smooth',
+    inline: 'center',
+    block: 'nearest'
+  });
+}
+    });
+  }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+
+  sections.forEach(section => observer.observe(section));
+
+  // fallback: highlight first section on load
+  if (links.length) links[0].classList.add('active');
+</script>
+
+</body>
+</html>

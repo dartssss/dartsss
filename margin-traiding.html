@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Маржинальная торговля — портфолио</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <header>
+  <div class="topbar-inner">
+    <a class="back-link" href="portfolio.html"><span class="arrow">←</span> Все кейсы</span></a>
+      <div class="my">
+       <div class="topbar">
+        <a href="portfolio.html#experience">Опыт</a>
+        <a href="portfolio.html#contact">Контакты</a>
+        <a class="btn-resume" href="documents/CV_Балюк_Дарья.pdf" download>Скачать резюме</a>
+       </div>
+       <button class="burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false">
+         <span></span><span></span><span></span>
+       </button>
+     </div>
+
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="portfolio.html#othercases">Кейсы</a>
+    <a href="portfolio.html#experience">Опыт</a>
+    <a href="portfolio.html#contact">Контакты</a>
+  </div>
+</header>
+
+<script>
+  const burgerBtn = document.getElementById('burgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  burgerBtn.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    burgerBtn.classList.toggle('active', isOpen);
+    burgerBtn.setAttribute('aria-expanded', isOpen);
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      burgerBtn.classList.remove('active');
+      burgerBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+
+
+
+<main>
+  <div class="wrap case-hero">
+    <div class="case-hero-eyebrow">Кейс · New feature · Fintech</div>
+    <h1>Маржинальная торговля</h1>
+    <p class="case-hero-desc">Новый инструмент, который позволяет клиенту торговать не только на собственные средства, но и на средства брокера. Функционал затронул не один экран, а почти весь путь инвестора — от аналитики портфеля до выставления заявки.</p>
+
+    <div class="case-meta-row">
+      <div class="meta-item">
+        <span class="meta-label">Продукт</span>
+        <span class="meta-value">Уралсиб Инвестиции </span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Роль</span>
+        <span class="meta-value">Product Designer</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Платформа</span>
+        <span class="meta-value">iOS, Android</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Год</span>
+        <span class="meta-value">2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="case-layout">
+    <div class="case-bar" id="caseNav">
+      <a href="#overview" class="case-bar-link" data-target="overview">Обзор</a>
+      <a href="#problem" class="case-bar-link" data-target="problem">Проблема</a>
+      <a href="#process" class="case-bar-link" data-target="process">Процесс</a>
+      <a href="#solution" class="case-bar-link" data-target="solution">Решение</a>
+      <a href="#result" class="case-bar-link" data-target="result">Результат</a>
+    </div>
+
+    <div class="case-content">
+
+      <section id="overview" class="case-section">
+        <h2>Обзор</h2>
+        <p>Маржинальная торговля это не отдельный экран, а изменение самой природы портфеля: у клиента появляются собственные и заёмные средства одновременно, и это должно быть понятно в каждой точке взаимодействия.</p>
+       
+      </section>
+
+      <section id="problem" class="case-section">
+        <h2>Задача</h2>
+        <p>Внедрить функционал маржинальной торговли так, чтобы:</p>
+        <p><strong>Состояние портфеля было прозрачным</strong> —в любой момент клиент понимает, где его собственные средства, а где заёмные.</p>
+        <p><strong>Инструмент не путал пользователей, которые им не пользуются </strong> — большинство клиентов торгуют без плеча, и для них ничего не должно было усложниться.</p>
+        <p><strong>Изменения были согласованы с реальными ограничениями брокера</strong> — доступное плечо, лимиты и риски должны были рассчитываться корректно на уровне интерфейса, а не только "на бумаге"</p>
+        
+      </section>
+
+      <section id="process" class="case-section">
+        <h2>Процесс</h2>
+        <p>Самое сложное было разобраться в механике инструмента. Я торговала в приложениях конкурентов, чтобы понять специфику инструмента и выявить как можно больше корнер-кейсов на этапе проектирования</p>
+        <p>Получилось собрать набор референсов, который позвоялет выявить общие паттерны использования инструмента.</p>
+        <img src="images/margin_traiding/ref.png" alt="Референсы маржинальной торговли" class="cases-images" style="margin-top: 20px; border: 1px solid #cecdcd; " >
+        
+      </section>
+      </section>
+
+      <section id="solution" class="case-section">
+        <h2>Решение</h2>
+        <p>Собрала сценарий, затронула почти все экраны приложения. Проработала статусную модель состояния портфеля и предупреждения о маржин-коллах. Согласовала флоу сбизнес-заказчиками и прошла ревью команды дизайна</p>
+        <img src="images/margin_traiding/flow.png" alt="Флоу маржинальной торговли" class="cases-images" style="margin-top: 20px; border: 1px solid #cecdcd; " >
+      </section>
+
+      <section id="result" class="case-section">
+        <h2>Результат</h2>
+        <p>В приложении стала доступна торговля ценными бумагами за счёт средств брокера — новый инструмент для более опытных инвесторов, встроенный в уже привычный интерфейс</p>
+        <img src="images/margin_traiding/result.png" alt="Флоу маржинальной торговли" class="cases-images" style="margin-top: 20px; border: 1px solid #cecdcd; " >
+        
+      </section>
+
+    </div>
+  </div>
+</main> 
+
+<!--<div class="case-footer-nav">
+  
+  <a class="all-cases" href="portfolio.html#cases">← Все кейсы</a>
+  <a href="#">Маржинальная торговля в инвестициях →</a>
+</div>-->
+
+<section id="othercases" class="othercases">
+    <div class="wrap">
+      <div class="section-label">Другие кейсы</div>
+
+      <div class="othercases-grid">
+
+       <a class="othercase-card" href="case-card-component.html">
+           <img src="images/card-product-thumbnail.png" alt="Uralsib main screen card" class="project-card-image ">
+          <div class="othercase-scrim"></div>
+          <div class="othercase-tags">
+            <span class="tag-pill">Design System</span>
+            <span class="tag-pill">Fintech</span>
+          </div>
+          <div class="othercase-content">
+            <div class="othercase-text">
+              <h3>Карточка продукта на главном экране</h3>
+              <p>Единый компонент вместо разрозненных состояний по платформам и продуктам</p>
+            </div>
+            <span class="othercase-cta">
+              <span class="othercase-cta-icon">→</span>
+            </span>
+          </div>
+        </a>
+
+        <!-- <a class="othercase-card" href="margin-traiding.html">
+          <img src="images/margin_traiding_thumbnail.png" alt="Uralsib margin traiding" class="project-card-image  margin-traiding">
+          <div class="othercase-scrim"></div>
+          <div class="othercase-tags">
+            <span class="tag-pill">New feature</span>
+            <span class="tag-pill">Fintech</span>
+          </div>
+          <div class="othercase-content">
+            <div class="othercase-text">
+              <h3>Маржинальная торговля в инвестициях</h3>
+              <p>Внедрение фичи во все флоу и отслежиание состояния портфеля</p>
+            </div>
+            <span class="othercase-cta">
+              <span class="othercase-cta-icon">→</span>
+            </span>
+          </div>
+        </a>-->
+
+        <a class="othercase-card" href="rainguard.html">
+          <img src="images/rainguard_thumbnail.png"  alt="Rain Guard project" class="project-card-image">
+          <div class="othercase-scrim"></div>
+          <div class="othercase-tags">
+            <span class="tag-pill">Research</span>
+            <span class="tag-pill">Study project</span>
+          </div>
+          <div class="othercase-content">
+            <div class="othercase-text">
+              <h3>Сервис аренды зонтиков</h3>
+              <p>Учебный проект с полным циклом исследования — от гипотез до финального решения</p>
+            </div>
+            <span class="othercase-cta">
+              <span class="othercase-cta-icon">→</span>
+            </span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+</section>
+
+  
+
+<script>
+  const links = document.querySelectorAll('.case-bar-link');
+  const sections = document.querySelectorAll('.case-section');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const link = document.querySelector(`.case-bar-link[data-target="${entry.target.id}"]`);
+      if (entry.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+
+  sections.forEach(section => observer.observe(section));
+
+  // fallback: highlight first section on load
+  if (links.length) links[0].classList.add('active');
+</script>
+
+</body>
+</html>
